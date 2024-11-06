@@ -1,0 +1,16 @@
+[
+    { "Nombre": "Dólar Estadounidense", "Img": "us", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 1.0, "venta": 0.98 },
+    { "Nombre": "Euro", "Img": "eu", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 1.1, "venta": 1.08 },
+    { "Nombre": "Yen Japonés", "Img": "jp", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.009, "venta": 0.0087 },
+    { "Nombre": "Libra Esterlina", "Img": "gb", "ActivoDivisa": false, "monedabase": false, "monedadeCambio": false, "valor": 1.3, "venta": 1.27 },
+    { "Nombre": "Dólar Canadiense", "Img": "ca", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.75, "venta": 0.73 },
+    { "Nombre": "Franco Suizo", "Img": "ch", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 1.05, "venta": 1.03 },
+    { "Nombre": "Dólar Australiano", "Img": "au", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.7, "venta": 0.68 },
+    { "Nombre": "Yuan Chino", "Img": "cn", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.15, "venta": 0.14 },
+    { "Nombre": "Dólar Neozelandés", "Img": "nz", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": true, "valor": 0.65, "venta": 0.63 },
+    { "Nombre": "Peso Mexicano", "Img": "mx", "ActivoDivisa": true, "monedabase": true, "monedadeCambio": false, "valor": 0.05, "venta": 0.048 },
+    { "Nombre": "Rublo Ruso", "Img": "ru", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.013, "venta": 0.012 },
+    { "Nombre": "Real Brasileño", "Img": "br", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.2, "venta": 0.19 },
+    { "Nombre": "Rupia India", "Img": "in", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": true, "valor": 0.012, "venta": 0.011 },
+    { "Nombre": "Rand Sudafricano", "Img": "za", "ActivoDivisa": true, "monedabase": false, "monedadeCambio": false, "valor": 0.055, "venta": 0.053 }
+]

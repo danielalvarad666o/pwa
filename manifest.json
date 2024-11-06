@@ -1,0 +1,10 @@
+{
+    "name": "Casa de Cambio",
+    "short_name": "Cambio",
+    "theme_color": "#ffe88a",
+    "background_color": "#ffe08a",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/"
+    ,"scope":"/"
+}

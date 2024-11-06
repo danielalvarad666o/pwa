@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Selecciona una Moneda</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center text-light">Selecciona una Moneda</h3>
+        <div id="currency-list" style="background-color: #3ace3d" class="mt-4">
+            <!-- Lista de monedas se llenará dinámicamente -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const monedaListElement = document.getElementById("currency-list");
+
+            // Obtener las monedas del localStorage
+            let storedMonedas = JSON.parse(localStorage.getItem("monedas")) || [];
+
+            // Filtrar las monedas que no tienen `monedabase: true`
+            const filteredMonedas = storedMonedas.filter(moneda => !moneda.monedabase);
+
+            filteredMonedas.forEach(moneda => {
+                const monedaItem = document.createElement("div");
+                monedaItem.classList.add("currency-item", "p-2", "border", "mb-2", "bg-light", "d-flex", "align-items-center", "justify-content-between");
+                monedaItem.style.cursor = "pointer";
+                monedaItem.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <img src="../img/banderas/${moneda.Img}.png" alt="${moneda.Nombre}" class="me-2" style="width: 30px;">
+                        <span>${moneda.Nombre}</span>
+                    </div>
+                    <img src="../img/icon_flecha.png" alt="Flecha" class="arrow-icon">
+                `;
+
+                // Agregar el evento de click para actualizar la moneda de cambio
+                monedaItem.addEventListener("click", () => {
+                    // Actualizar `monedadeCambio` de la moneda seleccionada y resetear el anterior
+                    storedMonedas = storedMonedas.map(m => {
+                        if (m.monedadeCambio) {
+                            m.monedadeCambio = false; // Resetear el estado del anterior
+                        }
+                        if (m.Nombre === moneda.Nombre) {
+                            m.monedadeCambio = true; // Actualizar la moneda seleccionada
+                        }
+                        return m;
+                    });
+
+                    // Guardar las monedas actualizadas en el localStorage
+                    localStorage.setItem("monedas", JSON.stringify(storedMonedas));
+
+                    // Redirigir a base.html
+                    window.location.href = "base.html";
+                });
+
+                monedaListElement.appendChild(monedaItem);
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
